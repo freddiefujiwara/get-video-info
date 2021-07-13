@@ -4,7 +4,7 @@ if(process.argv.length < 3) process.exit(1);
 
 (async () => {
     const fetch = require('node-fetch');
-    (await (await fetch(`https://www.youtube.com/get_video_info?video_id=${process.argv[2]}`))
+    (await (await fetch(`https://www.youtube.com/get_video_info?video_id=${process.argv[2]}&eurl=https://youtube.googleapis.com/v/${process.argv[2]}&html5=1&c=TVHTML5&cver=6.20180913`))
         .text())
     .split('&')
         .forEach((kv) => {
